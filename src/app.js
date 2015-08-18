@@ -13,32 +13,35 @@ var temperature = document.getElementById('temperature'); {
 };
 
 var upButton = document.getElementById('upButton');
-upButton.onclick = function() {thermostat.increaseTemperature();
+upButton.onclick = function() {
+                                thermostat.increaseTemperature();
                                 DisplayTemp();
                                 TemperatureColour();
-                               };
+                              };
 
 var downButton = document.getElementById('downButton');
-downButton.onclick = function() {thermostat.decreaseTemperature();
+downButton.onclick = function() {
+                                  thermostat.decreaseTemperature();
                                   DisplayTemp();
-                                 TemperatureColour();
-                                 };
+                                  TemperatureColour();
+                                };
 
 var resetButton = document.getElementById('resetButton');
-resetButton.onclick = function() {thermostat.resetTemperature();
+resetButton.onclick = function() {
+                                    thermostat.resetTemperature();
                                     DisplayTemp();
-                                   TemperatureColour();
-                                     };
+                                    TemperatureColour();
+                                  };
 
 var saveButton = document.getElementById('saveButton');
 saveButton.checked = function() {
-                                   if(this.checked) {
+                                   if (this.checked) {
                                      thermostat.switchMode();
                                      TemperatureColour();
-                                       DisplayTemp();
+                                     DisplayTemp();
                                    } else {
                                      thermostat.switchMode();
                                      TemperatureColour();
-                                       DisplayTemp();
+                                     DisplayTemp();
                                    };
                                  };

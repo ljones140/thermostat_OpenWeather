@@ -3,6 +3,7 @@ describe('Thermostat', function() {
   var thermostat;
   beforeEach(function() {
     thermostat = new Thermostat();
+    powerSave = true;
   });
 
   it('has a default temperature of 20', function() {
@@ -23,7 +24,45 @@ describe('Thermostat', function() {
     for (var i = 0; i < 15; i++) {
       thermostat.decreaseTemperature();
     };
+
     expect(thermostat.temperature()).toEqual(10);
+  });
+
+  it('has a maximum temperature of 32', function() {
+    thermostat.switchMode();
+    for (var i = 0; i < 15; i++) {
+      thermostat.increaseTemperature();
+    };
+
+    expect(thermostat.temperature()).toEqual(32);
+  });
+
+  it('has a power saving mode that is on by default', function() {
+    expect(thermostat.powerSave()).toBe(true);
+  });
+
+  it('can switch power saving mode on and off', function() {
+    thermostat.switchMode();
+    expect(thermostat.powerSave()).toBe(false);
+  });
+
+  it('should have a maximum temp of 25 when powerSave is on', function() {
+    for (var i = 0; i < 15; i++) {
+      thermostat.increaseTemperature();
+    };
+
+    expect(thermostat.temperature()).toEqual(25);
+  });
+
+  it('can reset the temperature to 20', function() {
+    thermostat.resetTemperature();
+    expect(thermostat.temperature()).toEqual(20);
+  });
+
+  it('changes color depending on temperature', function() {
+    thermostat.temp = 17;
+    thermostat.colorChange();
+    expect(thermostat.col).toEqual('green');
   });
 
 });

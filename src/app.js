@@ -6,7 +6,7 @@ TemperatureColour = function() {
 
 DisplayTemp = function() {
   temperature.innerHTML = thermostat.temperature();
-}
+};
 
 var temperature = document.getElementById('temperature'); {
   temperature.innerHTML = thermostat.temperature();

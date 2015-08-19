@@ -34,14 +34,10 @@ resetButton.onclick = function() {
                                   };
 
 var saveButton = document.getElementById('saveButton');
-saveButton.checked = function() {
-                                   if (this.checked) {
+saveButton.onclick = function() {
+                        console.log('hello');
                                      thermostat.switchMode();
                                      TemperatureColour();
                                      DisplayTemp();
-                                   } else {
-                                     thermostat.switchMode();
-                                     TemperatureColour();
-                                     DisplayTemp();
-                                   };
+
                                  };

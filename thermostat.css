@@ -1,0 +1,21 @@
+body {
+  background: url(https://i.imgur.com/wvunc.jpg);
+  background-size: cover;
+}
+
+section {
+  text-align: right;
+  margin-top: 50px;
+  margin-right: 50px;
+  font-size: 2em;
+}
+
+.buttons {
+  font-size: 1em;
+}
+
+#temperature {
+  font-size: 3em;
+  font-weight: bold;
+  margin-right: 50px;
+}

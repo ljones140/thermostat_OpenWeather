@@ -7,17 +7,17 @@ describe('Thermostat', function() {
   });
 
   it('has a default temperature of 20', function() {
-    expect(thermostat.temperature()).toEqual(20);
+    expect(thermostat.temperature()).toEqual(20 + ' °C');
   });
 
   it('can increase temperature by 1', function() {
     thermostat.increaseTemperature();
-    expect(thermostat.temperature()).toEqual(21);
+    expect(thermostat.temperature()).toEqual(21 + ' °C');
   });
 
   it('can decrease temperature by 1', function() {
     thermostat.decreaseTemperature();
-    expect(thermostat.temperature()).toEqual(19);
+    expect(thermostat.temperature()).toEqual(19 + ' °C');
   });
 
   it('has a minimum temperature of 10', function() {
@@ -25,7 +25,7 @@ describe('Thermostat', function() {
       thermostat.decreaseTemperature();
     };
 
-    expect(thermostat.temperature()).toEqual(10);
+    expect(thermostat.temperature()).toEqual(10 + ' °C');
   });
 
   it('has a maximum temperature of 32', function() {
@@ -34,7 +34,7 @@ describe('Thermostat', function() {
       thermostat.increaseTemperature();
     };
 
-    expect(thermostat.temperature()).toEqual(32);
+    expect(thermostat.temperature()).toEqual(32 + ' °C');
   });
 
   it('has a power saving mode that is on by default', function() {
@@ -51,18 +51,17 @@ describe('Thermostat', function() {
       thermostat.increaseTemperature();
     };
 
-    expect(thermostat.temperature()).toEqual(25);
+    expect(thermostat.temperature()).toEqual(25 + ' °C');
   });
 
   it('can reset the temperature to 20', function() {
     thermostat.resetTemperature();
-    expect(thermostat.temperature()).toEqual(20);
+    expect(thermostat.temperature()).toEqual(20 + ' °C');
   });
 
   it('changes color depending on temperature', function() {
     thermostat.temp = 17;
-    thermostat.colorChange();
-    expect(thermostat.col).toEqual('green');
+    expect(thermostat.colorChange()).toEqual('green');
   });
 
 });

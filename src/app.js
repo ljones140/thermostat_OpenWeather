@@ -29,7 +29,6 @@ $(document).ready(function() {
   $('button').eq(3).click(function() {
     var city = $('input:text').val();
     getCityWeather(city);
-    // event.preventDefault();
   });
 
   var getCityWeather = function(city) {
@@ -40,7 +39,6 @@ $(document).ready(function() {
 
   var showWeather = function(result) {
     $('#weather').html('City: ' + result.name + ' Weather: ' + result.main.temp + ' ' + result.weather[0].description);
-
   };
 
 
@@ -54,9 +52,7 @@ $(document).ready(function() {
      thermostat.switchMode();
      TemperatureColour();
      DisplayTemp();
-
   });
-
 });
 
 

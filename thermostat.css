@@ -1,27 +1,43 @@
 body {
   background: url(https://i.imgur.com/wvunc.jpg);
   background-size: cover;
-  /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
-  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  /*font-family: "Comic Sans MS", "Comic Sans", cursive;*/
 }
 
 section {
   text-align: right;
-  margin-top: 50px;
-  margin-right: 50px;
-  font-size: 2em;
-}
-
-.buttons {
-  font-size: 1em;
 }
 
 #temperature {
-  font-size: 3em;
-  font-weight: bold;
+  position: absolute;
+  right:10%;
+  font-size: 32px;
   margin-right: 50px;
 }
 
-#weather {
-  color: white;
+/*aside {
+  position:absolute;
+  top: 10%;
+  right: 10%;
+}*/
+#down {
+position: absolute;
+top: 10%;
+right:5%;
+width:50px;
+
 }
+
+#up {
+position: absolute;
+top: 10%;
+right:5%;
+margin-right: 50px;
+width:50px;
+}
+
+ #temperature {
+position: absolute;
+top: 10%;
+ }

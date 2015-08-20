@@ -5,25 +5,26 @@
   <title>Thermostat</title>
   <link rel="stylesheet" href="./thermostat.css">
   <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js'></script>
-  </head>
-
-  <body>
-
+</head>
+<body>
   <section>
 
-  <div><span id='temperature'></span></div>
+    <aside>
+<!--     <div> -->
+<span id='temperature'></span>
+      <button id="up"> ^ </button>
+      <button id="down"> v </button><br />
+    <!-- </div> -->
+    <button id="resetButton"> R </button>
+    <input type="checkbox" id="saveButton" checked>
+    </aside>
 
-  <button> ^ </button>
-  <button> v </button>
-  <button id="resetButton"> Reset </button>
-  <input type="checkbox" id="saveButton" checked> Power Save Mode
-  <input type="text" name="city">
-  <button> Get Weather </button>
-  <figure id="weather">
-  </figure>
+    <input type="text" name="city">
+    <button> Get Weather </button>
+    <figure id="weather">
+    </figure>
   </section>
-  </body>
-
+</body>
   <script src="src/Thermostat.js"></script>
   <script src="src/app.js"></script>
 </html>

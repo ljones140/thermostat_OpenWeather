@@ -1,6 +1,8 @@
 body {
   background: url(https://i.imgur.com/wvunc.jpg);
   background-size: cover;
+  /*font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;*/
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
 section {
@@ -18,4 +20,8 @@ section {
   font-size: 3em;
   font-weight: bold;
   margin-right: 50px;
+}
+
+#weather {
+  color: white;
 }

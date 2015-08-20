@@ -40,7 +40,7 @@ $(document).ready(function() {
   };
 
   var showWeather = function(result) {
-    $('#weather').html('City: ' + result.name + 'Weather: ' + result.main.temp + ' ' + result.weather[0].description);
+    $('#weather').html('City: ' + result.name + ' Weather: ' + result.main.temp + ' ' + result.weather[0].description);
   };
 
 

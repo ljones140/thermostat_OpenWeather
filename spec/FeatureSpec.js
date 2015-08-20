@@ -46,7 +46,7 @@ describe('Feature tests',function(){
 
   it('max 25 with powersave', function() {
     $('input[type="checkbox"]').prop('checked', true);
-    for (i = 0; i < 6; i++) {
+    for (var i = 0; i < 6; i++) {
       $('button').eq(0).click();
     }
     expect('#temperature').toContainText('25');
@@ -54,7 +54,7 @@ describe('Feature tests',function(){
 
   it('min temp is 10', function() {
     $('input[type="checkbox"]').click();
-    for (i = 0; i < 12; i++) {
+    for (var i = 0; i < 12; i++) {
       $('button').eq(1).click();
     }
     expect('#temperature').toContainText('10');
@@ -62,7 +62,7 @@ describe('Feature tests',function(){
 
   it('max 32 with powersave off', function() {
     $('#saveButton').click();
-    for (i = 0; i < 15; i++) {
+    for (var i = 0; i < 15; i++) {
      $('button').eq(0).click();
     }
     expect('#temperature').toContainText('32');
@@ -70,7 +70,7 @@ describe('Feature tests',function(){
 
   it('powersave set resets to default max', function() {
     $('input[type="checkbox"]').click();
-    for (i = 0; i < 15; i++) {
+    for (var i = 0; i < 15; i++) {
       $('button').eq(0).click();
     }
     expect('#temperature').toContainText('32');
@@ -85,7 +85,7 @@ describe('Feature tests',function(){
 
   it('is red at >= 25', function() {
     $('#saveButton').click();
-    for (i = 0; i < 5; i++) {
+    for (var i = 0; i < 5; i++) {
       $('button').eq(0).click();
     }
     expect('#temperature').toContainText('25');
@@ -93,18 +93,21 @@ describe('Feature tests',function(){
   });
 
   it('is green at < 18', function() {
-    for (i = 0; i < 2; i++) {
+    for (var i = 0; i < 2; i++) {
       $('button').eq(1).click();
     }
     expect('#temperature').toContainText('18');
     expect($('#temperature').css("color")).toBe('rgb(255, 165, 0)')
   });
 
+  it('makes call to weather API', function() {
+    spyOn($, "getJSON");
+    $('input:text').val('London');
+    $('button').eq(3).click();
+    expect($.getJSON).toHaveBeenCalled();
+  });
 
 });
-
-
-
 
 
 

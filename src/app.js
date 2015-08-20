@@ -12,25 +12,43 @@ $(document).ready(function() {
   $('#temperature').show(function(){
     DisplayTemp();
     TemperatureColour();
-  })
+  });
 
-  $('#upButton').click(function(){
+  $('button').eq(0).click(function(){
     thermostat.increaseTemperature();
     DisplayTemp();
     TemperatureColour();
-  })
+  });
 
-  $('#downButton').click(function() {
+  $('button').eq(1).click(function() {
     thermostat.decreaseTemperature();
     DisplayTemp();
     TemperatureColour();
-  })
+  });
+
+  $('button').eq(3).click(function() {
+    event.preventDefault();
+    var city = $('input:text').val();
+    console.log(city);
+    getCityWeather(city);
+  });
+
+  var getCityWeather = function(city) {
+    $.getJSON('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&units=metric', function(result) {
+      showWeather(result);
+    });
+  };
+
+  var showWeather = function(result) {
+    $('#weather').html('City: ' + result.name + 'Weather: ' + result.main.temp + ' ' + result.weather[0].description);
+  };
+
 
   $('#resetButton').click(function() {
     thermostat.resetTemperature();
     DisplayTemp();
     TemperatureColour();
-  })
+  });
 
   $('#saveButton').click(function() {
     console.log('hello');
@@ -38,9 +56,9 @@ $(document).ready(function() {
      TemperatureColour();
      DisplayTemp();
 
-  })
+  });
 
-})
+});
 
 
 

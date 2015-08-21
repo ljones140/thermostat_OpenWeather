@@ -54,7 +54,7 @@ describe('Feature tests',function(){
 
   it('min temp is 10', function() {
     $('input[type="checkbox"]').click();
-    for (var i = 0; i < 12; i++) {
+    for (var i = 20; i < 32; i++) {
       $('button').eq(1).click();
     }
     expect('#temperature').toContainText('10');

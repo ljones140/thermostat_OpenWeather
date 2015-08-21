@@ -6,6 +6,13 @@ TemperatureColour = function() {
 
 DisplayTemp = function() {
   temperature.innerHTML = thermostat.temperature();
+  // sendTemp(thermostat.temperature());
+      $.ajax({
+      type: "POST",
+      url: "/",
+      data: { 'temperature': thermostat.temperature()
+      }
+    });
 };
 
 $(document).ready(function() {
@@ -53,6 +60,19 @@ $(document).ready(function() {
      TemperatureColour();
      DisplayTemp();
   });
+
+  // var sendTemp = function(temperature) {
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "/",
+  //     data: { 'temperature':'123'
+  //     },
+  //     success: function(msg){
+  //     alert('wow' + msg);
+  //     }
+  //   });
+  // };
+
 });
 
 
